@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Shooter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div id="nomeTela" class="tela ativa">
+    <h1>Digite seu nome</h1>
+    <input type="text" id="nomeJogador" placeholder="Seu nome">
+    <button class="btn" onclick="confirmarNome()">Confirmar</button>
+</div>
+
+
+<div id="menu" class="tela">
+    <h1>SPACE SHOOTER</h1>
+    <button class="btn" onclick="iniciarJogo()">Jogar</button>
+    <button class="btn" onclick="abrirTela('scores')">Ranking</button>
+    <button class="btn" onclick="abrirTela('config')">Configurações</button>
+</div>
+
+
+<div id="config" class="tela">
+    <h1>Configurações</h1>
+
+    <label>Dificuldade:</label>
+    <select id="dificuldade" onchange="alterarDificuldade()">
+        <option value="1">Fácil</option>
+        <option value="2">Médio</option>
+        <option value="3">Difícil</option>
+    </select>
+
+    <button class="btn" onclick="voltarMenu()">Voltar</button>
+</div>
+
+
+<div id="scores" class="tela">
+    <h1>Ranking</h1>
+
+    <ul id="listaScores"></ul>
+
+    <button class="btn" onclick="voltarMenu()">Voltar</button>
+</div>
+
+
+<div id="game" class="tela">
+    <h2>Pontos: <span id="score">0</span></h2>
+    <canvas id="gameCanvas" width="400" height="600"></canvas>
+    <button class="btn" onclick="voltarMenu()">Sair</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
